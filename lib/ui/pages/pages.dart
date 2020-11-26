@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:supercharged/supercharged.dart';
 
+part 'Ilustration_pages.dart';
 part 'address_page.dart';
 part 'food_detail_page.dart';
 part 'food_page.dart';
@@ -20,3 +21,4 @@ part 'main_page.dart';
 part 'payment_page.dart';
 part 'signin_page.dart';
 part 'signup_page.dart';
+part 'success_order_page.dart';
