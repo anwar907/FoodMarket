@@ -33,19 +33,8 @@ class _MainPageState extends State<MainPage> {
               Center(
                 child: FoodPages(),
               ),
-              Center(
-                  child: IlustrationPage(
-                title: "Ouch! Hungry",
-                subtitle: "Seems you like have not\nordered any food yet",
-                picturePath: 'assets/love_burger.png',
-                buttonTitle1: "Find Food",
-                buttonTap1: () {},
-                buttonTap2: () {},
-                buttonTitle2: 'Oke',
-              )),
-              Center(
-                child: Text("Profile"),
-              ),
+              Center(child: OrderHistoryPage()),
+              Center(child: ProfilePage()),
             ],
           )),
           Align(
