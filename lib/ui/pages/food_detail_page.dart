@@ -185,13 +185,10 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               child: RaisedButton(
                                 onPressed: () {
                                   Get.to(PayamentPage(
-                                    transaction: Transaction(
-                                        food: mockFood[1],
-                                        user: mockUser,
-                                        quantity: 2,
-                                        total: (mockFood[0].price * 2 * 1.1)
-                                                .toInt() +
-                                            50000),
+                                    transaction: widget.transaction.copyWith(
+                                        quantity: quantity,
+                                        total: quantity *
+                                            widget.transaction.food.price),
                                   ));
                                 },
                                 color: mainColor,

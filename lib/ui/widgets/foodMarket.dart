@@ -26,7 +26,7 @@ Widget foodMarket(BuildContext context) {
       ),
       ListTile(
         title: Text(
-          "Terms & COnditions",
+          "Terms & Conditions",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),

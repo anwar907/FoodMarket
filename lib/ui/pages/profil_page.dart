@@ -34,20 +34,22 @@ class _ProfilePageState extends State<ProfilePage> {
                         image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://4.bp.blogspot.com/-wJ5prQ0K8qI/WsQ9UKn4xII/AAAAAAAABVI/cVns-SfXZy8hj4G9LBv55aLpCXLD3BvZACLcBGAs/s320/sembalun%2B2018_101.jpg"))),
+                                (context.bloc<UserCubit>().state as UserLoaded)
+                                    .user
+                                    .picturePath))),
                   ),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  "Warung Belut",
+                  (context.bloc<UserCubit>().state as UserLoaded).user.name,
                   style: blackFontStyle2,
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: Text(
-                    "rilltheend@gmail.com",
+                    (context.bloc<UserCubit>().state as UserLoaded).user.email,
                     style: greyFontStyle,
                   ),
                 )

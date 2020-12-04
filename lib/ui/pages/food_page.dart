@@ -47,7 +47,9 @@ class _FoodPagesState extends State<FoodPages> {
                         image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://4.bp.blogspot.com/-wJ5prQ0K8qI/WsQ9UKn4xII/AAAAAAAABVI/cVns-SfXZy8hj4G9LBv55aLpCXLD3BvZACLcBGAs/s320/sembalun%2B2018_101.jpg"))),
+                                (context.bloc<UserCubit>().state as UserLoaded)
+                                    .user
+                                    .picturePath))),
                   ),
                 ],
               ),
@@ -55,18 +57,40 @@ class _FoodPagesState extends State<FoodPages> {
             Container(
               height: 258,
               width: double.infinity,
-              child: ListView(scrollDirection: Axis.horizontal, children: [
-                Row(
-                  children: mockFood
-                      .map((e) => Padding(
-                            padding: EdgeInsets.only(
-                                left: (e == mockFood.first) ? defaultMargin : 0,
-                                right: defaultMargin),
-                            child: FoodCard(e),
-                          ))
-                      .toList(),
-                )
-              ]),
+              child: BlocBuilder<FoodCubit, FoodState>(
+                builder: (_, state) => (state is FoodLoaded)
+                    ? ListView(scrollDirection: Axis.horizontal, children: [
+                        Row(
+                          children: state.foods
+                              .map((e) => Padding(
+                                    padding: EdgeInsets.only(
+                                        left: (e == mockFood.first)
+                                            ? defaultMargin
+                                            : 0,
+                                        right: defaultMargin),
+                                    child: GestureDetector(
+                                        onTap: () {
+                                          Get.to(FoodDetailPage(
+                                            transaction: Transaction(
+                                                food: e,
+                                                user: (context
+                                                        .bloc<UserCubit>()
+                                                        .state as UserLoaded)
+                                                    .user),
+                                            onBackButtonPressed: () {
+                                              Get.back();
+                                            },
+                                          ));
+                                        },
+                                        child: FoodCard(e)),
+                                  ))
+                              .toList(),
+                        )
+                      ])
+                    : Center(
+                        child: loadingIndikator,
+                      ),
+              ),
             ),
             Container(
               width: double.infinity,
@@ -85,34 +109,44 @@ class _FoodPagesState extends State<FoodPages> {
                   SizedBox(
                     height: 16,
                   ),
-                  Builder(builder: (_) {
-                    List<Food> foods = (selectedIndex == 0)
-                        ? mockFood
-                        : (selectedIndex == 1)
-                            ? []
-                            : [];
-                    return Padding(
-                        padding: const EdgeInsets.fromLTRB(
-                            defaultMargin, 0, defaultMargin, 16),
-                        child: Column(
-                            children: foods
-                                .map((e) => GestureDetector(
-                                      onTap: () {
-                                        Get.to(FoodDetailPage(
-                                          transaction: Transaction(
-                                              food: mockFood[0],
-                                              user: mockUser,
-                                              quantity: 2,
-                                              total:
-                                                  (mockFood[0].price * 2 * 1.1)
-                                                          .toInt() +
-                                                      50000),
-                                        ));
-                                      },
-                                      child: FoodListItem(
-                                          food: e, itemWidth: listWidthItem),
-                                    ))
-                                .toList()));
+                  BlocBuilder<FoodCubit, FoodState>(builder: (_, state) {
+                    if (state is FoodLoaded) {
+                      List<Food> foods = state.foods
+                          .where((element) =>
+                              element.types.contains((selectedIndex == 0)
+                                  ? FoodTypes.new_food
+                                  : (selectedIndex == 1)
+                                      ? FoodTypes.popular
+                                      : FoodTypes.recommended))
+                          .toList();
+                      return Padding(
+                          padding: const EdgeInsets.fromLTRB(
+                              defaultMargin, 0, defaultMargin, 16),
+                          child: Column(
+                              children: foods
+                                  .map((e) => GestureDetector(
+                                        onTap: () {
+                                          Get.to(FoodDetailPage(
+                                            transaction: Transaction(
+                                                food: mockFood[0],
+                                                user: mockUser,
+                                                quantity: 2,
+                                                total: (mockFood[0].price *
+                                                            2 *
+                                                            1.1)
+                                                        .toInt() +
+                                                    50000),
+                                          ));
+                                        },
+                                        child: FoodListItem(
+                                            food: e, itemWidth: listWidthItem),
+                                      ))
+                                  .toList()));
+                    } else {
+                      return Center(
+                        child: loadingIndikator,
+                      );
+                    }
                   }),
                 ],
               ),

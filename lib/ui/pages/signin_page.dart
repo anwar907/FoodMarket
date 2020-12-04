@@ -6,11 +6,11 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-    bool isLoading = false;
     return GeneralPage(
       title: 'Sign In',
       subtitle: 'Fint your best ever meal',
@@ -71,12 +71,41 @@ class _SignInPageState extends State<SignInPage> {
                 margin: EdgeInsets.only(top: 24),
                 // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                 child: isLoading
-                    ? SpinKitFadingCircle(
-                        size: 45,
-                        color: mainColor,
-                      )
+                    ? loadingIndikator
                     : RaisedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          setState(() {
+                            isLoading = true;
+                          });
+
+                          await context.bloc<UserCubit>().signIn(
+                              emailController.text, passwordController.text);
+                          UserState state = context.bloc<UserCubit>().state;
+
+                          if (state is UserLoaded) {
+                            context.bloc<FoodCubit>().getFood();
+                            context.bloc<TransactionCubit>().getTransaction();
+                            Get.to(MainPage());
+                          } else {
+                            Get.snackbar(
+                              "",
+                              "",
+                              backgroundColor: 'D9435E'.toColor(),
+                              icon: Icon(MdiIcons.closeCircleOutline),
+                              messageText: Text(
+                                  (state as UserLoadingField).message,
+                                  style:
+                                      GoogleFonts.poppins(color: Colors.white)),
+                              titleText: Text("Sign In Failed",
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600)),
+                            );
+                            setState(() {
+                              isLoading = false;
+                            });
+                          }
+                        },
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
@@ -97,10 +126,7 @@ class _SignInPageState extends State<SignInPage> {
                 margin: EdgeInsets.only(top: 24),
                 // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                 child: isLoading
-                    ? SpinKitFadingCircle(
-                        size: 45,
-                        color: mainColor,
-                      )
+                    ? loadingIndikator
                     : RaisedButton(
                         onPressed: () {
                           Get.to(SignUpPage());

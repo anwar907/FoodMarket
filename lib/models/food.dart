@@ -1,5 +1,7 @@
 part of "models.dart";
 
+enum FoodTypes { new_food, popular, recommended }
+
 class Food extends Equatable {
   final int id;
   final String picturePath;
@@ -8,6 +10,7 @@ class Food extends Equatable {
   final String ingredients;
   final int price;
   final double rate;
+  final List<FoodTypes> types;
 
   Food(
       {this.id,
@@ -16,7 +19,8 @@ class Food extends Equatable {
       this.description,
       this.ingredients,
       this.price,
-      this.rate});
+      this.rate,
+      this.types = const []});
 
   @override
   // TODO: implement props
@@ -26,27 +30,25 @@ class Food extends Equatable {
 
 List<Food> mockFood = [
   Food(
-    id: 1,
-    picturePath:
-        "https://www.rukita.co/stories/wp-content/uploads/2020/02/byurger.jpg",
-    name: "Burger King",
-    description:
-        "Burger King makanan khas orang luar negri yang di lengkapi dengna dading, sayur dan juga ada stick kentang ditemani air minum dingin",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 15000,
-    rate: 4.2,
-  ),
+      id: 1,
+      picturePath:
+          "https://www.rukita.co/stories/wp-content/uploads/2020/02/byurger.jpg",
+      name: "Burger King",
+      description: "Burger King makanan khas orang luar negri yang di lengkapi dengna dading, sayur dan juga ada stick kentang ditemani air minum dingin",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 15000,
+      rate: 4.2,
+      types: [FoodTypes.new_food, FoodTypes.popular, FoodTypes.recommended]),
   Food(
-    id: 2,
-    picturePath:
-        "https://www.pngitem.com/pimgs/m/281-2811831_asian-food-png-healthy-food-dish-png-transparent.png",
-    name: "Sayur food",
-    description:
-        "Sayur food dicampur berbagai bahan makanan seperti daging, sayur, kentang dan masih banyak lagi",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 13000,
-    rate: 4.2,
-  ),
+      id: 2,
+      picturePath:
+          "https://www.pngitem.com/pimgs/m/281-2811831_asian-food-png-healthy-food-dish-png-transparent.png",
+      name: "Sayur food",
+      description: "Sayur food dicampur berbagai bahan makanan seperti daging, sayur, kentang dan masih banyak lagi",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 13000,
+      rate: 4.2,
+      types: [FoodTypes.new_food, FoodTypes.recommended]),
   Food(
     id: 3,
     picturePath:
@@ -59,53 +61,53 @@ List<Food> mockFood = [
     rate: 4.2,
   ),
   Food(
-    id: 4,
-    picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
-    name: "Ayam beberok",
-    description:
-        "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 14000,
-    rate: 4.2,
-  ),
+      id: 4,
+      picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
+      name: "Ayam beberok",
+      description:
+          "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 14000,
+      rate: 4.2,
+      types: [FoodTypes.popular, FoodTypes.recommended]),
   Food(
-    id: 5,
-    picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
-    name: "Ayam ",
-    description:
-        "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 14000,
-    rate: 4.2,
-  ),
+      id: 5,
+      picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
+      name: "Ayam ",
+      description:
+          "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 14000,
+      rate: 4.2,
+      types: [FoodTypes.new_food, FoodTypes.popular]),
   Food(
-    id: 6,
-    picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
-    name: "Ayam Pecel",
-    description:
-        "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 14000,
-    rate: 4.2,
-  ),
+      id: 6,
+      picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
+      name: "Ayam Pecel",
+      description:
+          "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 14000,
+      rate: 4.2,
+      types: [FoodTypes.new_food]),
   Food(
-    id: 7,
-    picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
-    name: "Ayam Serbuk",
-    description:
-        "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 14000,
-    rate: 4.2,
-  ),
+      id: 7,
+      picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
+      name: "Ayam Serbuk",
+      description:
+          "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 14000,
+      rate: 4.2,
+      types: [FoodTypes.recommended]),
   Food(
-    id: 8,
-    picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
-    name: "Ayam Rujak",
-    description:
-        "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
-    ingredients: "Daging, Sayur, Kentang, Saos",
-    price: 14000,
-    rate: 4.2,
-  )
+      id: 8,
+      picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
+      name: "Ayam Rujak",
+      description:
+          "Ayam beberok terdiri dari berbagai macam sayuran seperti wortel daun ubi dan juga bumbu masakan lainnya",
+      ingredients: "Daging, Sayur, Kentang, Saos",
+      price: 14000,
+      rate: 4.2,
+      types: [FoodTypes.popular])
 ];
