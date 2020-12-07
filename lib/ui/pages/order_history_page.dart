@@ -1,12 +1,15 @@
 part of 'pages.dart';
 
 class OrderHistoryPage extends StatefulWidget {
+  final Transaction belanja;
+  OrderHistoryPage({this.belanja});
   @override
   _OrderHistoryPageState createState() => _OrderHistoryPageState();
 }
 
 class _OrderHistoryPageState extends State<OrderHistoryPage> {
   int selectedIndex = 0;
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -86,14 +89,25 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                             return Column(
                                 children: transaction
                                     .map((e) => Padding(
-                                          padding: const EdgeInsets.only(
-                                              right: defaultMargin,
-                                              left: defaultMargin,
-                                              bottom: 16),
+                                        padding: const EdgeInsets.only(
+                                            right: defaultMargin,
+                                            left: defaultMargin,
+                                            bottom: 16),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            // ORDERN IN PROGRES MASIH ERROR
+                                            Get.to(OrderInProgress(
+                                              transaction: e.copyWith(
+                                                  quantity: quantity,
+                                                  total: quantity *
+                                                      widget
+                                                          .belanja.food.price),
+                                            ));
+                                          },
                                           child: OrderListItem(
                                               transaction: e,
                                               itemWidth: listItemWidth),
-                                        ))
+                                        )))
                                     .toList());
                           },
                         )

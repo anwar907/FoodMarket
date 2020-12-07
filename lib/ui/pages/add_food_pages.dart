@@ -1,31 +1,41 @@
-part of "pages.dart";
+part of 'pages.dart';
 
-class AddressPage extends StatefulWidget {
+class AddFoodPages extends StatefulWidget {
   @override
-  _AddressPageState createState() => _AddressPageState();
+  _AddFoodPagesState createState() => _AddFoodPagesState();
 }
 
-class _AddressPageState extends State<AddressPage> {
+class _AddFoodPagesState extends State<AddFoodPages> {
+  TextEditingController nameFoodController = TextEditingController();
+  TextEditingController stockFoodController = TextEditingController();
+  TextEditingController descriptionFoodController = TextEditingController();
+  TextEditingController dropdownController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController phoneController = TextEditingController();
-    TextEditingController addressController = TextEditingController();
-    TextEditingController housenoController = TextEditingController();
-    TextEditingController cityCotroller = TextEditingController();
-
     return GeneralPage(
-      title: 'Address',
-      subtitle: "Make suer it's valid",
+      title: 'Add Food',
+      subtitle: 'Add your best and perfect food',
       onBackButtonPressed: () {
         Get.back();
       },
       child: Column(
         children: [
           Container(
+              width: 110,
+              height: 110,
+              margin: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/photo_border.png"))),
+              child: Image(
+                image: AssetImage("assets/photo.png"),
+              )),
+          Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 6),
             child: Text(
-              "Phone No",
+              "Name Food",
               style: blackFontStyle2,
             ),
           ),
@@ -37,18 +47,18 @@ class _AddressPageState extends State<AddressPage> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.black)),
             child: TextField(
-              controller: phoneController,
+              controller: nameFoodController,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your phone number'),
+                  hintText: 'Type your food name'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Address",
+              "Stock Food",
               style: blackFontStyle2,
             ),
           ),
@@ -60,18 +70,18 @@ class _AddressPageState extends State<AddressPage> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.black)),
             child: TextField(
-              controller: addressController,
+              controller: stockFoodController,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your valid address'),
+                  hintText: 'Type your stock food'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "House no",
+              "Description",
               style: blackFontStyle2,
             ),
           ),
@@ -83,18 +93,41 @@ class _AddressPageState extends State<AddressPage> {
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.black)),
             child: TextField(
-              controller: housenoController,
+              controller: descriptionFoodController,
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your house number'),
+                  hintText: 'Type your description food'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "City",
+              "Price Food",
+              style: blackFontStyle2,
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black)),
+            child: TextField(
+              controller: descriptionFoodController,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintStyle: greyFontStyle,
+                  hintText: 'Rp. '),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
+            child: Text(
+              "Ingradient",
               style: blackFontStyle2,
             ),
           ),
@@ -111,17 +144,17 @@ class _AddressPageState extends State<AddressPage> {
                   items: [
                     DropdownMenuItem(
                         child: Text(
-                      "Mataram",
+                      "Sayur",
                       style: blackFontStyle3,
                     )),
                     DropdownMenuItem(
                         child: Text(
-                      "Lombok Tengah",
+                      "Daging",
                       style: blackFontStyle3,
                     )),
                     DropdownMenuItem(
                         child: Text(
-                      "Lombok Timur",
+                      "Buah",
                       style: blackFontStyle3,
                     ))
                   ],
@@ -133,17 +166,14 @@ class _AddressPageState extends State<AddressPage> {
                 width: 150,
                 height: 45,
                 margin: EdgeInsets.only(top: 24),
-                // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                 child: RaisedButton(
-                  onPressed: () {
-                    Get.to(SuccessSignupPage());
-                  },
+                  onPressed: () {},
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
                   color: mainColor,
-                  child: Text("Sign Up Now",
+                  child: Text("Add Food",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500)),
                 ),

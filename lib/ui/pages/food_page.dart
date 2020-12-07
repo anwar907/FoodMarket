@@ -98,7 +98,7 @@ class _FoodPagesState extends State<FoodPages> {
               child: Column(
                 children: [
                   CustomTabBar(
-                    titles: ['New Taste', 'Popular', 'Recommended'],
+                    titles: ['All Food', 'Popular', 'Recommended'],
                     selectedIndex: selectedIndex,
                     onTap: (index) {
                       setState(() {

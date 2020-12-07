@@ -15,14 +15,22 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:supercharged/supercharged.dart';
 
 part 'Ilustration_pages.dart';
+part 'add_food_pages.dart';
 part 'address_page.dart';
+part 'edit_home_address.dart';
+part 'edit_password_page.dart';
+part 'edit_profil_page.dart';
 part 'food_detail_page.dart';
 part 'food_page.dart';
 part 'general_pages.dart';
+part 'help_center.dart';
 part 'main_page.dart';
 part 'order_history_page.dart';
+part 'order_inprogres.dart';
 part 'payment_page.dart';
+part 'privacy_policy.dart';
 part 'profil_page.dart';
+part 'rate_food_pages.dart';
 part 'signin_page.dart';
 part 'signup_page.dart';
 part 'success_order_page.dart';

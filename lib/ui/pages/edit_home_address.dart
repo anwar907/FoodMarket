@@ -1,49 +1,23 @@
-part of "pages.dart";
+part of 'pages.dart';
 
-class AddressPage extends StatefulWidget {
+class EditHomeAddress extends StatefulWidget {
   @override
-  _AddressPageState createState() => _AddressPageState();
+  _EditHomeAddressState createState() => _EditHomeAddressState();
 }
 
-class _AddressPageState extends State<AddressPage> {
+class _EditHomeAddressState extends State<EditHomeAddress> {
+  TextEditingController addressController = TextEditingController();
+  TextEditingController housenoController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController phoneController = TextEditingController();
-    TextEditingController addressController = TextEditingController();
-    TextEditingController housenoController = TextEditingController();
-    TextEditingController cityCotroller = TextEditingController();
-
     return GeneralPage(
-      title: 'Address',
-      subtitle: "Make suer it's valid",
+      title: 'Edit Home Address',
+      subtitle: "Don't give the wrong address",
       onBackButtonPressed: () {
         Get.back();
       },
       child: Column(
         children: [
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 6),
-            child: Text(
-              "Phone No",
-              style: blackFontStyle2,
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.black)),
-            child: TextField(
-              controller: phoneController,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintStyle: greyFontStyle,
-                  hintText: 'Type your phone number'),
-            ),
-          ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
@@ -123,6 +97,11 @@ class _AddressPageState extends State<AddressPage> {
                         child: Text(
                       "Lombok Timur",
                       style: blackFontStyle3,
+                    )),
+                    DropdownMenuItem(
+                        child: Text(
+                      "Lombok Barat",
+                      style: blackFontStyle3,
                     ))
                   ],
                   onChanged: (item) {})),
@@ -143,7 +122,7 @@ class _AddressPageState extends State<AddressPage> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   color: mainColor,
-                  child: Text("Sign Up Now",
+                  child: Text("Save",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500)),
                 ),

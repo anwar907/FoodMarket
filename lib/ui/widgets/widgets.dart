@@ -1,17 +1,25 @@
 import 'package:FoodMarket/models/models.dart';
 import 'package:FoodMarket/shared/shared.dart';
+import 'package:FoodMarket/ui/pages/pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:supercharged/supercharged.dart';
 
 part 'account.dart';
+part 'costom_rate_bar.dart';
 part 'custom_buttom_navbar.dart';
 part 'custom_tabBar.dart';
 part 'foodMarket.dart';
 part 'food_card.dart';
 part 'food_list_item.dart';
+part 'food_star1.dart';
+part 'food_star2.dart';
+part 'food_star3.dart';
+part 'food_start.4.dart';
+part 'food_start5.dart';
 part 'order_list_item.dart';
 part 'rating_star.dart';
