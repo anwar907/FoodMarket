@@ -6,10 +6,11 @@ class SuccessSignupPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: IlustrationPage(
-        title: "Yeay! Completed",
-        subtitle: "Now you are able to order \nsome fods as a self reward",
+        title: "Yes! Selesai",
+        subtitle:
+            "Sekarang anda sudah bisa pesan makanan \ncari makanan sehat dan bergizi",
         picturePath: "assets/food_wishes.png",
-        buttonTitle1: "Find Foods",
+        buttonTitle1: "Cari Makanan",
         buttonTap1: () {
           Get.to(SignInPage());
         },

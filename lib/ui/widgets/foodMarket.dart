@@ -8,7 +8,7 @@ Widget foodMarket(BuildContext context) {
           Get.to(AddFoodPages());
         },
         title: Text(
-          "Add Food",
+          "Tambah Makanan",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
@@ -18,7 +18,7 @@ Widget foodMarket(BuildContext context) {
           Get.to(RateFoodPages());
         },
         title: Text(
-          "Rating Food",
+          "Ulasan Makanan",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
@@ -28,7 +28,7 @@ Widget foodMarket(BuildContext context) {
           Get.to(HelpCenter());
         },
         title: Text(
-          "Help Center",
+          "Bantuan",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
@@ -38,7 +38,7 @@ Widget foodMarket(BuildContext context) {
           Get.to(PrivacyPolicy());
         },
         title: Text(
-          "Privacy & Policy",
+          "Privasi & Policy",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),

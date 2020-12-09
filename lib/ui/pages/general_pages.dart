@@ -61,7 +61,7 @@ class GeneralPage extends StatelessWidget {
                               Text(
                                 title,
                                 style: GoogleFonts.poppins(
-                                  fontSize: 22,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

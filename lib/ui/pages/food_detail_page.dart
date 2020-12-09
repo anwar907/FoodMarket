@@ -149,7 +149,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               style: greyFontStyle,
                             )),
                         Text(
-                          "Ingredient",
+                          "Kategori",
                           style: blackFontStyle3,
                         ),
                         Container(
@@ -165,13 +165,13 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Total Price",
+                                  "Total Bayar",
                                   style: greyFontStyle.copyWith(fontSize: 13),
                                 ),
                                 Text(
                                   NumberFormat.currency(
                                           locale: 'id-ID',
-                                          symbol: 'IDR',
+                                          symbol: 'IDR ',
                                           decimalDigits: 0)
                                       .format(quantity *
                                           widget.transaction.food.price),
@@ -197,7 +197,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
-                                  "Order Now",
+                                  "Beli Sekarang",
                                   style: blackFontStyle3.copyWith(
                                       fontWeight: FontWeight.w500),
                                 ),

@@ -12,7 +12,7 @@ class _EditPassowrdAddressState extends State<EditPassowrdAddress> {
   Widget build(BuildContext context) {
     return GeneralPage(
       title: 'Edit Password',
-      subtitle: 'please remember your password',
+      subtitle: 'perkuat password anda',
       onBackButtonPressed: () {
         Get.back();
       },
@@ -22,7 +22,7 @@ class _EditPassowrdAddressState extends State<EditPassowrdAddress> {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Current Password",
+              "Password Sebelumnya",
               style: blackFontStyle2,
             ),
           ),
@@ -38,14 +38,14 @@ class _EditPassowrdAddressState extends State<EditPassowrdAddress> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your current password'),
+                  hintText: 'masukan password sebelumnya'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "New Password",
+              "Password Baru",
               style: blackFontStyle2,
             ),
           ),
@@ -61,7 +61,7 @@ class _EditPassowrdAddressState extends State<EditPassowrdAddress> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your new password'),
+                  hintText: 'masukan password baru'),
             ),
           ),
           Row(
@@ -79,7 +79,7 @@ class _EditPassowrdAddressState extends State<EditPassowrdAddress> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   color: mainColor,
-                  child: Text("Save",
+                  child: Text("Simpan",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500)),
                 ),

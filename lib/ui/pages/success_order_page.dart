@@ -6,11 +6,12 @@ class SuccessOrderPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: IlustrationPage(
-        title: "You've Made Order",
-        subtitle: "Just Stey at home while we are\npreparing our best foods",
+        title: "Anda Sudah Memesan!!",
+        subtitle:
+            "Tetaplah dirumah saat kita datang\nnantikan makanan terbaikmu",
         picturePath: "assets/bike.png",
-        buttonTitle1: "Order other Food",
-        buttonTitle2: "View my Order",
+        buttonTitle1: "Tambah makanan lain",
+        buttonTitle2: "Lihat Orderan",
         buttonTap1: () {
           Get.offAll(MainPage());
         },

@@ -17,10 +17,10 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
       if (state is TransactionLoaded) {
         if (state.transactions.length == 0) {
           return IlustrationPage(
-            title: "Ouch! Hungry",
+            title: "Ouch! Lapar",
             subtitle: "Seems you like have not\nordered any food yet",
             picturePath: 'assets/love_burger.png',
-            buttonTitle1: "Find Food",
+            buttonTitle1: "Cari Makanan",
             buttonTap1: () {},
           );
         } else {
@@ -42,10 +42,10 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Your Orders",
+                          "Pesanan Anda",
                           style: blackFontStyle1,
                         ),
-                        Text("Wait for the best meal",
+                        Text("Tunggu makanan terbaikmu",
                             style: greyFontStyle.copyWith(
                                 fontWeight: FontWeight.w300))
                       ],
@@ -58,7 +58,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                     child: Column(
                       children: [
                         CustomTabBar(
-                          titles: ["In Progress", "Pass Orders"],
+                          titles: ["Sedang Proses", "Pesanan Selesai"],
                           selectedIndex: selectedIndex,
                           onTap: (index) {
                             setState(() {
@@ -95,14 +95,15 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                                             bottom: 16),
                                         child: GestureDetector(
                                           onTap: () {
-                                            // ORDERN IN PROGRES MASIH ERROR
-                                            Get.to(OrderInProgress(
-                                              transaction: e.copyWith(
-                                                  quantity: quantity,
-                                                  total: quantity *
-                                                      widget
-                                                          .belanja.food.price),
-                                            ));
+                                            // ORDERN IN PROGRES UI SUDAH ADA TAPI MASIH ERROR
+                                            // Get.to(OrderInProgress(
+                                            //   transaction: Transaction(
+                                            //     user: (context
+                                            //             .bloc<UserCubit>()
+                                            //             .state as UserLoaded)
+                                            //         .user,
+                                            //   ),
+                                            // ));
                                           },
                                           child: OrderListItem(
                                               transaction: e,

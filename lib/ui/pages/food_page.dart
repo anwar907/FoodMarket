@@ -29,11 +29,11 @@ class _FoodPagesState extends State<FoodPages> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Food Market",
+                        "Toko Makanan",
                         style: blackFontStyle1,
                       ),
                       Text(
-                        "Let's get some food",
+                        "Ayo cari makanan",
                         style:
                             greyFontStyle.copyWith(fontWeight: FontWeight.w300),
                       )
@@ -98,7 +98,7 @@ class _FoodPagesState extends State<FoodPages> {
               child: Column(
                 children: [
                   CustomTabBar(
-                    titles: ['All Food', 'Popular', 'Recommended'],
+                    titles: ['Semua', 'Populer', 'Rekomendasi'],
                     selectedIndex: selectedIndex,
                     onTap: (index) {
                       setState(() {
@@ -128,10 +128,13 @@ class _FoodPagesState extends State<FoodPages> {
                                         onTap: () {
                                           Get.to(FoodDetailPage(
                                             transaction: Transaction(
-                                                food: mockFood[0],
-                                                user: mockUser,
+                                                food: e,
+                                                user: (context
+                                                        .bloc<UserCubit>()
+                                                        .state as UserLoaded)
+                                                    .user,
                                                 quantity: 2,
-                                                total: (mockFood[0].price *
+                                                total: (state.foods[0].price *
                                                             2 *
                                                             1.1)
                                                         .toInt() +

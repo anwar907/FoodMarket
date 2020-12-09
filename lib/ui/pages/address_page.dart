@@ -14,8 +14,8 @@ class _AddressPageState extends State<AddressPage> {
     TextEditingController cityCotroller = TextEditingController();
 
     return GeneralPage(
-      title: 'Address',
-      subtitle: "Make suer it's valid",
+      title: 'Alamat',
+      subtitle: "Masukan alamat lengkap",
       onBackButtonPressed: () {
         Get.back();
       },
@@ -25,7 +25,7 @@ class _AddressPageState extends State<AddressPage> {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 6),
             child: Text(
-              "Phone No",
+              "Nomor Hp",
               style: blackFontStyle2,
             ),
           ),
@@ -41,14 +41,14 @@ class _AddressPageState extends State<AddressPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your phone number'),
+                  hintText: 'masukan nomor hp'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Address",
+              "Alamat",
               style: blackFontStyle2,
             ),
           ),
@@ -64,14 +64,14 @@ class _AddressPageState extends State<AddressPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your valid address'),
+                  hintText: 'masukan alamat lengkap'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "House no",
+              "Nomor rumah",
               style: blackFontStyle2,
             ),
           ),
@@ -87,14 +87,14 @@ class _AddressPageState extends State<AddressPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your house number'),
+                  hintText: 'masukan nomor rumah'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "City",
+              "Kota",
               style: blackFontStyle2,
             ),
           ),
@@ -143,7 +143,7 @@ class _AddressPageState extends State<AddressPage> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   color: mainColor,
-                  child: Text("Sign Up Now",
+                  child: Text("Daftar Sekarang",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500)),
                 ),

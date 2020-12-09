@@ -10,7 +10,6 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:supercharged/supercharged.dart';
 
 part 'account.dart';
-part 'costom_rate_bar.dart';
 part 'custom_buttom_navbar.dart';
 part 'custom_tabBar.dart';
 part 'foodMarket.dart';

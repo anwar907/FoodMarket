@@ -12,15 +12,15 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return GeneralPage(
-      title: 'Sign In',
-      subtitle: 'Fint your best ever meal',
+      title: 'Masuk',
+      subtitle: 'Buat akun terlebih dahulu',
       child: Column(
         children: [
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 26, defaultMargin, 6),
             child: Text(
-              "Email Address",
+              "Alamat Email",
               style: blackFontStyle2,
             ),
           ),
@@ -36,7 +36,7 @@ class _SignInPageState extends State<SignInPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your email address'),
+                  hintText: 'masukan alamat email'),
             ),
           ),
           Container(
@@ -59,7 +59,7 @@ class _SignInPageState extends State<SignInPage> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your Password address'),
+                  hintText: 'masukan password'),
             ),
           ),
           Row(
@@ -69,7 +69,6 @@ class _SignInPageState extends State<SignInPage> {
                 width: 150,
                 height: 45,
                 margin: EdgeInsets.only(top: 24),
-                // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                 child: isLoading
                     ? loadingIndikator
                     : RaisedButton(
@@ -81,11 +80,13 @@ class _SignInPageState extends State<SignInPage> {
                           await context.bloc<UserCubit>().signIn(
                               emailController.text, passwordController.text);
                           UserState state = context.bloc<UserCubit>().state;
-
                           if (state is UserLoaded) {
                             context.bloc<FoodCubit>().getFood();
                             context.bloc<TransactionCubit>().getTransaction();
-                            Get.to(MainPage());
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (contex) => MainPage()));
                           } else {
                             Get.snackbar(
                               "",
@@ -111,7 +112,7 @@ class _SignInPageState extends State<SignInPage> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         color: mainColor,
-                        child: Text("Sign In",
+                        child: Text("Masuk",
                             style: GoogleFonts.poppins(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500)),
@@ -124,7 +125,6 @@ class _SignInPageState extends State<SignInPage> {
                 width: 150,
                 height: 45,
                 margin: EdgeInsets.only(top: 24),
-                // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
                 child: isLoading
                     ? loadingIndikator
                     : RaisedButton(
@@ -136,7 +136,7 @@ class _SignInPageState extends State<SignInPage> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         color: greyColor,
-                        child: Text("Create Account",
+                        child: Text("Buat Akun",
                             style: GoogleFonts.poppins(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500)),

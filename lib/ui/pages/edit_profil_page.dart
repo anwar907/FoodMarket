@@ -12,8 +12,8 @@ class _EditProfilPageState extends State<EditProfilPage> {
   @override
   Widget build(BuildContext context) {
     return GeneralPage(
-        title: 'Edit Profile',
-        subtitle: 'Use your correct bio',
+        title: 'Edit Akun',
+        subtitle: 'Gunakan akun yang valid',
         onBackButtonPressed: () {
           Get.back();
         },
@@ -23,7 +23,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
               width: double.infinity,
               margin: EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 6),
               child: Text(
-                "Full Name",
+                "Nama",
                 style: blackFontStyle2,
               ),
             ),
@@ -39,14 +39,14 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintStyle: greyFontStyle,
-                    hintText: 'Type your full name'),
+                    hintText: 'masukan nama lengkap'),
               ),
             ),
             Container(
               width: double.infinity,
               margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
               child: Text(
-                "Email Address",
+                "Alamat Email",
                 style: blackFontStyle2,
               ),
             ),
@@ -62,14 +62,14 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintStyle: greyFontStyle,
-                    hintText: 'Type your email address'),
+                    hintText: 'masukan alamat email'),
               ),
             ),
             Container(
               width: double.infinity,
               margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
               child: Text(
-                "Phone Number",
+                "Nomor HP",
                 style: blackFontStyle2,
               ),
             ),
@@ -86,7 +86,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
                 decoration: InputDecoration(
                     border: InputBorder.none,
                     hintStyle: greyFontStyle,
-                    hintText: 'Type your phone number'),
+                    hintText: 'masukan nomor hp'),
               ),
             ),
             Row(
@@ -103,7 +103,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     color: mainColor,
-                    child: Text("Save",
+                    child: Text("Simpan",
                         style: GoogleFonts.poppins(
                             color: Colors.black, fontWeight: FontWeight.w500)),
                   ),

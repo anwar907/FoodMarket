@@ -15,8 +15,8 @@ class _PayamentPageState extends State<PayamentPage> {
   @override
   Widget build(BuildContext context) {
     return GeneralPage(
-      title: 'Payment',
-      subtitle: 'You deserve better meal',
+      title: 'Pembayaran',
+      subtitle: 'satu langkah lagi',
       onBackButtonPressed: () {
         Get.back();
       },
@@ -33,7 +33,7 @@ class _PayamentPageState extends State<PayamentPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Item Order",
+                    "Order Makanan",
                     style: blackFontStyle3,
                   ),
                   SizedBox(height: 12),
@@ -81,7 +81,7 @@ class _PayamentPageState extends State<PayamentPage> {
                   Padding(
                     padding: EdgeInsets.only(top: 16, bottom: 8),
                     child: Text(
-                      "Details Transaction",
+                      "Detail Transaksi",
                       style: blackFontStyle3,
                     ),
                   ),
@@ -154,7 +154,7 @@ class _PayamentPageState extends State<PayamentPage> {
                               defaultMargin -
                               5,
                           child: Text(
-                            "Tax 10%",
+                            "PPN 10%",
                             style: greyFontStyle,
                           )),
                       SizedBox(
@@ -184,7 +184,7 @@ class _PayamentPageState extends State<PayamentPage> {
                               defaultMargin -
                               5,
                           child: Text(
-                            "Total Price",
+                            "Total Bayar",
                             style: greyFontStyle,
                           )),
                       SizedBox(
@@ -218,7 +218,7 @@ class _PayamentPageState extends State<PayamentPage> {
                 Padding(
                   padding: EdgeInsets.only(top: 16, bottom: 8),
                   child: Text(
-                    "Delivery to",
+                    "Dikirim ke",
                     style: blackFontStyle3,
                   ),
                 ),
@@ -231,7 +231,7 @@ class _PayamentPageState extends State<PayamentPage> {
                             defaultMargin -
                             5,
                         child: Text(
-                          "Name",
+                          "Nama",
                           style: greyFontStyle,
                         )),
                     SizedBox(
@@ -257,7 +257,7 @@ class _PayamentPageState extends State<PayamentPage> {
                             defaultMargin -
                             5,
                         child: Text(
-                          "Phone No",
+                          "Nomor HP",
                           style: greyFontStyle,
                         )),
                     SizedBox(
@@ -283,7 +283,7 @@ class _PayamentPageState extends State<PayamentPage> {
                             defaultMargin -
                             5,
                         child: Text(
-                          "Address",
+                          "Alamat",
                           style: greyFontStyle,
                         )),
                     SizedBox(
@@ -309,7 +309,7 @@ class _PayamentPageState extends State<PayamentPage> {
                             defaultMargin -
                             5,
                         child: Text(
-                          "House No",
+                          "Nomor Rumah",
                           style: greyFontStyle,
                         )),
                     SizedBox(
@@ -335,7 +335,7 @@ class _PayamentPageState extends State<PayamentPage> {
                             defaultMargin -
                             5,
                         child: Text(
-                          "City",
+                          "Kota",
                           style: greyFontStyle,
                         )),
                     SizedBox(
@@ -388,13 +388,13 @@ class _PayamentPageState extends State<PayamentPage> {
                             icon: Icon(MdiIcons.closeCircleOutline,
                                 color: Colors.white),
                             titleText: Text(
-                              "Transaction Failed",
+                              "Transaksi gagal",
                               style: GoogleFonts.poppins(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600),
                             ),
                             messageText: Text(
-                              "Please try again later",
+                              "Coba Lagi",
                               style: GoogleFonts.poppins(color: Colors.white),
                             ));
                       }
@@ -404,7 +404,7 @@ class _PayamentPageState extends State<PayamentPage> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     color: mainColor,
-                    child: Text("Checkout Now",
+                    child: Text("Bayar sekarang",
                         style: GoogleFonts.poppins(
                             color: Colors.black, fontWeight: FontWeight.w500)),
                   ),

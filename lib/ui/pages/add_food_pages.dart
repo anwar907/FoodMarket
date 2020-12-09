@@ -13,8 +13,8 @@ class _AddFoodPagesState extends State<AddFoodPages> {
   @override
   Widget build(BuildContext context) {
     return GeneralPage(
-      title: 'Add Food',
-      subtitle: 'Add your best and perfect food',
+      title: 'Tambah Makanan',
+      subtitle: 'Raih keuntungan anda',
       onBackButtonPressed: () {
         Get.back();
       },
@@ -35,7 +35,7 @@ class _AddFoodPagesState extends State<AddFoodPages> {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 6),
             child: Text(
-              "Name Food",
+              "Nama Makanan",
               style: blackFontStyle2,
             ),
           ),
@@ -51,14 +51,14 @@ class _AddFoodPagesState extends State<AddFoodPages> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your food name'),
+                  hintText: 'masukan nama makanan'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Stock Food",
+              "Jumlah Makanan",
               style: blackFontStyle2,
             ),
           ),
@@ -74,14 +74,14 @@ class _AddFoodPagesState extends State<AddFoodPages> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your stock food'),
+                  hintText: 'masukan jumlah makanan'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Description",
+              "Keterangan",
               style: blackFontStyle2,
             ),
           ),
@@ -97,14 +97,14 @@ class _AddFoodPagesState extends State<AddFoodPages> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your description food'),
+                  hintText: 'ulas keterangan makanan anda'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Price Food",
+              "Harga Makanan",
               style: blackFontStyle2,
             ),
           ),
@@ -127,7 +127,7 @@ class _AddFoodPagesState extends State<AddFoodPages> {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Ingradient",
+              "Kategori",
               style: blackFontStyle2,
             ),
           ),
@@ -163,7 +163,7 @@ class _AddFoodPagesState extends State<AddFoodPages> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 150,
+                width: 170,
                 height: 45,
                 margin: EdgeInsets.only(top: 24),
                 child: RaisedButton(
@@ -173,7 +173,7 @@ class _AddFoodPagesState extends State<AddFoodPages> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   color: mainColor,
-                  child: Text("Add Food",
+                  child: Text("Tambah Makanan",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500)),
                 ),

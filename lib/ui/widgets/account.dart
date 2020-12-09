@@ -8,7 +8,7 @@ Widget account(BuildContext context) {
           Get.to(EditProfilPage());
         },
         title: Text(
-          "Edit Profile",
+          "Edit Akun",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
@@ -18,7 +18,7 @@ Widget account(BuildContext context) {
           Get.to(EditHomeAddress());
         },
         title: Text(
-          "Home Address",
+          "Alamat Rumah",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
@@ -28,14 +28,14 @@ Widget account(BuildContext context) {
           Get.to(EditPassowrdAddress());
         },
         title: Text(
-          "Security",
+          "Password",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),
       ),
       ListTile(
         title: Text(
-          "Payments",
+          "Pembayaran",
           style: blackFontStyle3,
         ),
         trailing: Icon(Icons.arrow_forward_ios),

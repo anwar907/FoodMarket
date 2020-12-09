@@ -11,8 +11,8 @@ class _EditHomeAddressState extends State<EditHomeAddress> {
   @override
   Widget build(BuildContext context) {
     return GeneralPage(
-      title: 'Edit Home Address',
-      subtitle: "Don't give the wrong address",
+      title: 'Edit Alamat Rumah',
+      subtitle: "Jangan kasih alamat salah",
       onBackButtonPressed: () {
         Get.back();
       },
@@ -22,7 +22,7 @@ class _EditHomeAddressState extends State<EditHomeAddress> {
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "Address",
+              "Alamat",
               style: blackFontStyle2,
             ),
           ),
@@ -38,14 +38,14 @@ class _EditHomeAddressState extends State<EditHomeAddress> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your valid address'),
+                  hintText: 'masukan alamat lengkap'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "House no",
+              "Nomor Rumah",
               style: blackFontStyle2,
             ),
           ),
@@ -61,14 +61,14 @@ class _EditHomeAddressState extends State<EditHomeAddress> {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintStyle: greyFontStyle,
-                  hintText: 'Type your house number'),
+                  hintText: 'masukan nomor rumah'),
             ),
           ),
           Container(
             width: double.infinity,
             margin: EdgeInsets.fromLTRB(defaultMargin, 16, defaultMargin, 6),
             child: Text(
-              "City",
+              "Kota",
               style: blackFontStyle2,
             ),
           ),
@@ -122,7 +122,7 @@ class _EditHomeAddressState extends State<EditHomeAddress> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   color: mainColor,
-                  child: Text("Save",
+                  child: Text("Simpan",
                       style: GoogleFonts.poppins(
                           color: Colors.black, fontWeight: FontWeight.w500)),
                 ),

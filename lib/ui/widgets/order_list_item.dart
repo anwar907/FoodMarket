@@ -51,7 +51,7 @@ class OrderListItem extends StatelessWidget {
               ),
               (transaction.status == TransactionStatus.cancelled)
                   ? Text(
-                      'Cancelled',
+                      'Batal',
                       style: GoogleFonts.poppins(
                           color: 'D9435E'.toColor(), fontSize: 10),
                     )
@@ -63,7 +63,7 @@ class OrderListItem extends StatelessWidget {
                         )
                       : (transaction.status == TransactionStatus.on_delivery)
                           ? Text(
-                              'On Delivery',
+                              'Proses pengiriman',
                               style: GoogleFonts.poppins(
                                   color: '1ABC9C'.toColor(), fontSize: 10),
                             )
