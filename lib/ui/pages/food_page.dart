@@ -97,14 +97,23 @@ class _FoodPagesState extends State<FoodPages> {
               color: Colors.white,
               child: Column(
                 children: [
-                  CustomTabBar(
-                    titles: ['Semua', 'Populer', 'Rekomendasi'],
-                    selectedIndex: selectedIndex,
-                    onTap: (index) {
-                      setState(() {
-                        selectedIndex = index;
-                      });
-                    },
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: CustomTabBar(
+                      titles: [
+                        'Semua',
+                        'Populer',
+                        'Rekomendasi',
+                        'Minuman',
+                        'Makanan'
+                      ],
+                      selectedIndex: selectedIndex,
+                      onTap: (index) {
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                      },
+                    ),
                   ),
                   SizedBox(
                     height: 16,
@@ -113,11 +122,15 @@ class _FoodPagesState extends State<FoodPages> {
                     if (state is FoodLoaded) {
                       List<Food> foods = state.foods
                           .where((element) =>
-                              element.types.contains((selectedIndex == 0)
+                              element.types.contains(((selectedIndex == 0)
                                   ? FoodTypes.new_food
                                   : (selectedIndex == 1)
                                       ? FoodTypes.popular
-                                      : FoodTypes.recommended))
+                                      : (selectedIndex == 2)
+                                          ? FoodTypes.recommended
+                                          : (selectedIndex == 3)
+                                              ? FoodTypes.minuman
+                                              : FoodTypes.minuman)))
                           .toList();
                       return Padding(
                           padding: const EdgeInsets.fromLTRB(

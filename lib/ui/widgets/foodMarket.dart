@@ -15,7 +15,7 @@ Widget foodMarket(BuildContext context) {
       ),
       ListTile(
         onTap: () {
-          Get.to(RateFoodPages());
+          Get.to(RateFood());
         },
         title: Text(
           "Ulasan Makanan",

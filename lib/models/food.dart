@@ -1,6 +1,6 @@
 part of "models.dart";
 
-enum FoodTypes { new_food, popular, recommended }
+enum FoodTypes { new_food, popular, recommended, minuman, makanan }
 
 class Food extends Equatable {
   final int id;
@@ -38,17 +38,20 @@ List<Food> mockFood = [
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 15000,
       rate: 4.2,
-      types: [FoodTypes.new_food, FoodTypes.popular, FoodTypes.recommended]),
+      types: [FoodTypes.recommended, FoodTypes.makanan]),
   Food(
       id: 2,
       picturePath:
           "https://www.pngitem.com/pimgs/m/281-2811831_asian-food-png-healthy-food-dish-png-transparent.png",
       name: "Sayur food",
-      description: "Sayur food dicampur berbagai bahan makanan seperti daging, sayur, kentang dan masih banyak lagi",
+      description:
+          "Sayur food dicampur berbagai bahan makanan seperti daging, sayur, kentang dan masih banyak lagi",
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 13000,
       rate: 4.2,
-      types: [FoodTypes.new_food, FoodTypes.recommended]),
+      types: [
+        FoodTypes.new_food,
+      ]),
   Food(
     id: 3,
     picturePath:
@@ -69,7 +72,10 @@ List<Food> mockFood = [
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 14000,
       rate: 4.2,
-      types: [FoodTypes.popular, FoodTypes.recommended]),
+      types: [
+        FoodTypes.new_food,
+        FoodTypes.popular,
+      ]),
   Food(
       id: 5,
       picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
@@ -79,7 +85,7 @@ List<Food> mockFood = [
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 14000,
       rate: 4.2,
-      types: [FoodTypes.new_food, FoodTypes.popular]),
+      types: [FoodTypes.new_food, FoodTypes.minuman]),
   Food(
       id: 6,
       picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
@@ -89,7 +95,7 @@ List<Food> mockFood = [
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 14000,
       rate: 4.2,
-      types: [FoodTypes.new_food]),
+      types: [FoodTypes.new_food, FoodTypes.makanan]),
   Food(
       id: 7,
       picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
@@ -99,7 +105,7 @@ List<Food> mockFood = [
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 14000,
       rate: 4.2,
-      types: [FoodTypes.recommended]),
+      types: [FoodTypes.new_food, FoodTypes.recommended]),
   Food(
       id: 8,
       picturePath: "https://i.dlpng.com/static/png/7079473_preview.png",
@@ -109,5 +115,5 @@ List<Food> mockFood = [
       ingredients: "Daging, Sayur, Kentang, Saos",
       price: 14000,
       rate: 4.2,
-      types: [FoodTypes.popular])
+      types: [FoodTypes.new_food, FoodTypes.popular, FoodTypes.minuman])
 ];
