@@ -11,7 +11,10 @@ Widget foodMarket(BuildContext context) {
           "Tambah Makanan",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: Icon(
+          Icons.queue,
+          color: Colors.yellow,
+        ),
       ),
       ListTile(
         onTap: () {
@@ -21,7 +24,10 @@ Widget foodMarket(BuildContext context) {
           "Ulasan Makanan",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: Icon(
+          Icons.food_bank_outlined,
+          color: Colors.yellow,
+        ),
       ),
       ListTile(
         onTap: () {
@@ -31,7 +37,7 @@ Widget foodMarket(BuildContext context) {
           "Bantuan",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: Icon(Icons.help_outline_rounded, color: Colors.yellow),
       ),
       ListTile(
         onTap: () {
@@ -41,7 +47,7 @@ Widget foodMarket(BuildContext context) {
           "Privasi & Policy",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: Icon(Icons.privacy_tip_outlined, color: Colors.yellow),
       )
     ],
   );

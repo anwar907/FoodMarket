@@ -11,17 +11,10 @@ Widget account(BuildContext context) {
           "Edit Akun",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
-      ),
-      ListTile(
-        onTap: () {
-          Get.to(EditHomeAddress());
-        },
-        title: Text(
-          "Alamat Rumah",
-          style: blackFontStyle3,
+        trailing: Icon(
+          Icons.border_color,
+          color: Colors.yellow,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
       ),
       ListTile(
         onTap: () {
@@ -31,14 +24,31 @@ Widget account(BuildContext context) {
           "Password",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: Icon(
+          Icons.lock,
+          color: Colors.yellow,
+        ),
       ),
       ListTile(
+        onTap: () {},
         title: Text(
           "Pembayaran",
           style: blackFontStyle3,
         ),
-        trailing: Icon(Icons.arrow_forward_ios),
+        trailing: Icon(
+          Icons.payment,
+          color: Colors.yellow,
+        ),
+      ),
+      ListTile(
+        title: Text(
+          "Keluar",
+          style: blackFontStyle3,
+        ),
+        trailing: Icon(
+          Icons.power_settings_new,
+          color: Colors.red,
+        ),
       )
     ],
   );

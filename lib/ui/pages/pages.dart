@@ -17,7 +17,6 @@ import 'package:supercharged/supercharged.dart';
 part 'Ilustration_pages.dart';
 part 'add_food_pages.dart';
 part 'address_page.dart';
-part 'edit_home_address.dart';
 part 'edit_password_page.dart';
 part 'edit_profil_page.dart';
 part 'food_detail_page.dart';
